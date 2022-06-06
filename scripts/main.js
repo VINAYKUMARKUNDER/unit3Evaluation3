@@ -13,7 +13,7 @@ let wallet=[];
         }else{
         wallet.push(amount.value);
         let sum=0;
-        let user1 = JSON.parse(localStorage.getItem("user"));
+        let user1 = JSON.parse(localStorage.getItem("user"))||[];
         let am=user1.wallet;
         for(let i=0;i<wallet.length;i++){
             am+=Number(wallet[i]);
