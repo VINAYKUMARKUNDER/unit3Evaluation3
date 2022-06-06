@@ -1,3 +1,5 @@
+
+
 let wallet=[];
   function submit(){
         let name=document.getElementById("name");
@@ -11,15 +13,17 @@ let wallet=[];
         }else{
         wallet.push(amount.value);
         let sum=0;
+        let user1 = JSON.parse(localStorage.getItem("user"));
+        let am=user1.wallet;
         for(let i=0;i<wallet.length;i++){
-            sum+=Number(wallet[i]);
+            am+=Number(wallet[i]);
         }
 
         let user= {
             name:name.value,
             email:email.value,
             address:address.value,
-            wallet:sum,
+            wallet:am,
         }
         localStorage.setItem("user",JSON.stringify(user))
     }
